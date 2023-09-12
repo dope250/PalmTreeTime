@@ -11,3 +11,12 @@ or use PalmTreeTime.reg for inital creation.
 
 ## Prerequsites
 * NET 7.0 Runtime
+
+## ToDos
+* Calculate time when computer is actually running and not first started
+* Special weekend time contingent (add to normal ones)
+* Hide console window if everything checks. Show on time up; keep foreground till accepted to shutdown.
+* Better visual for warning. So that parents walking nearby can easier spot the time up
+* Better handling on null entries
+* Nice icon
+* Easy to use settings options
