@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/Users/dope250/Desktop/Repos/PalmTreeTime/PalmTreeTime.csproj": {}
+    "C:\\Users\\dope250\\Documents\\Git Repos\\PalmTreeTime\\PalmTreeTime.csproj": {}
   },
   "projects": {
-    "/Users/dope250/Desktop/Repos/PalmTreeTime/PalmTreeTime.csproj": {
+    "C:\\Users\\dope250\\Documents\\Git Repos\\PalmTreeTime\\PalmTreeTime.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/dope250/Desktop/Repos/PalmTreeTime/PalmTreeTime.csproj",
+        "projectUniqueName": "C:\\Users\\dope250\\Documents\\Git Repos\\PalmTreeTime\\PalmTreeTime.csproj",
         "projectName": "PalmTreeTime",
-        "projectPath": "/Users/dope250/Desktop/Repos/PalmTreeTime/PalmTreeTime.csproj",
-        "packagesPath": "/Users/dope250/.nuget/packages/",
-        "outputPath": "/Users/dope250/Desktop/Repos/PalmTreeTime/obj/",
+        "projectPath": "C:\\Users\\dope250\\Documents\\Git Repos\\PalmTreeTime\\PalmTreeTime.csproj",
+        "packagesPath": "C:\\Users\\dope250\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dope250\\Documents\\Git Repos\\PalmTreeTime\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Users\\dope250\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/Users/dope250/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\dope250\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dope250\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -37,12 +43,6 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "dependencies": {
-            "Terminal.Gui": {
-              "target": "Package",
-              "version": "[1.*, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -59,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

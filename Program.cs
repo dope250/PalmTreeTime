@@ -1,13 +1,2 @@
-﻿using PalmTreeTime;
-using Terminal.Gui;
-
-Application.Init();
-
-try
-{
-    Application.Run(new MyView());
-}
-finally
-{
-    Application.Shutdown();
-}
+﻿Console.WriteLine("Hello, World!");
+Console.ReadLine();
