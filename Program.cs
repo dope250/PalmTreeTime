@@ -42,6 +42,7 @@ class PalmTreeTime
 
     static System.Timers.Timer checkTimer = new System.Timers.Timer(60000);
     static int maxTime;
+    static int bonusTime;
     static DateTime lastTimeUsed;
     static DateTime currentTime;
     static bool debug = false;
@@ -68,6 +69,11 @@ class PalmTreeTime
     public static void Init()
     {
         maxTime = ReadReg<int>("TimeContingent");
+        bonusTime = ReadReg<int>("BonusContingent");
+        if (DateTime.Now.DayOfWeek.ToString() == "Saturday" || DateTime.Now.DayOfWeek.ToString() == "Sunday")
+        {
+            maxTime += bonusTime;
+        }
         lastTimeUsed = DateTime.Parse(ReadReg<string>("LastTimeRun"));
         currentTime = DateTime.Now;
         if (currentTime.Date != lastTimeUsed.Date)
