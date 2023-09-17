@@ -14,7 +14,8 @@ or use PalmTreeTime.reg for inital creation.
 * NET 7.0 Runtime
 
 ## ToDos
-* Calculate time when computer is actually running and not first started
+* ~~Calculate time when computer is actually running and not first started~~
+* Simplify that point above. Just do an tick vs. timeContingent check holy fck.
 * ~~Special weekend time contingent (add to normal ones)~~
 * ~~Hide console window if everything checks. Show on time up; keep foreground till accepted to shutdown.~~
 * Detailed description on how to setup the task scheduler

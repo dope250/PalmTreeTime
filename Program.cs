@@ -43,9 +43,12 @@ class PalmTreeTime
     static System.Timers.Timer checkTimer = new System.Timers.Timer(60000);
     static int maxTime;
     static int bonusTime;
+    static int tick = 0;
     static DateTime lastTimeUsed;
+    static DateTime startedOn;
     static DateTime currentTime;
     static bool debug = false;
+
 
     public static void Main(string[] args)
     {
@@ -68,21 +71,28 @@ class PalmTreeTime
 
     public static void Init()
     {
+        startedOn = DateTime.Now;
         maxTime = ReadReg<int>("TimeContingent");
+        
         bonusTime = ReadReg<int>("BonusContingent");
         if (DateTime.Now.DayOfWeek.ToString() == "Saturday" || DateTime.Now.DayOfWeek.ToString() == "Sunday")
         {
             maxTime += bonusTime;
         }
+
         lastTimeUsed = DateTime.Parse(ReadReg<string>("LastTimeRun"));
         currentTime = DateTime.Now;
         if (currentTime.Date != lastTimeUsed.Date)
         {
             WriteReg("LastTimeRun", currentTime.ToString());
             lastTimeUsed = DateTime.Parse(ReadReg<string>("LastTimeRun"));
+            WriteReg("Tick", 0);
+            tick = 0;
         }
         else
         {
+            tick = ReadReg<int>("Tick");
+            maxTime -= tick;
             if (currentTime >= lastTimeUsed.AddMinutes(maxTime))
             {
                 Shutdown(true);
@@ -131,7 +141,7 @@ class PalmTreeTime
 
     }
 
-    static void WriteReg(string registryName, string valueToWrite)
+    static void WriteReg(string registryName, object valueToWrite)
     {
         RegistryKey PTTKey = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\electronic Ping [eP]\PalmTreeTime", true);
         if (PTTKey != null)
@@ -144,7 +154,10 @@ class PalmTreeTime
     static void OnTimedEvent(object? source, ElapsedEventArgs e)
     {
         Console.Write(".");
-        if (DateTime.Now >= lastTimeUsed.AddMinutes(maxTime))
+        tick += 1;
+        WriteReg("Tick", tick);
+
+        if (DateTime.Now >= startedOn.AddMinutes(maxTime))
         {
             Shutdown(true);
         }
@@ -159,11 +172,12 @@ class PalmTreeTime
             Console.BackgroundColor = ConsoleColor.Red;
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("ZEIT ABGELAUFEN");
-            Console.WriteLine(DateTime.Now.ToString());
+            Console.WriteLine("Zeit Kontingent: " + maxTime.ToString());
             Console.BackgroundColor = ConsoleColor.Green;
             Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine("Speichere dein Spiel und drücke Enter.");
             Console.ReadLine();
+            Process.Start("shutdown.exe", "/s /t 0");
         }
 
         if (debug)
