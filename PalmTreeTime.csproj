@@ -1,12 +1,25 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net7.0</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>PlamTreeTime_Logo.ico</ApplicationIcon>
+    <UseWPF>True</UseWPF>
+    <UseWindowsForms>False</UseWindowsForms>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <StartupObject></StartupObject>
+
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="PalmTreeTime_Logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="PalmTreeTime_Logo.png" />
+  </ItemGroup>
 
 </Project>

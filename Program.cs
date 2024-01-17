@@ -4,8 +4,11 @@ using Microsoft.Win32;
 using System.Drawing;
 using System.Timers;
 using System.Runtime.InteropServices;
+using System.Windows;
+using PalmTreeTime;
+using System.Threading;
 
-class PalmTreeTime
+class PalmTreeTimeConsole
 {
     private const int MF_BYCOMMAND = 0x00000000;
     public const int SC_CLOSE = 0xF060;
@@ -50,24 +53,30 @@ class PalmTreeTime
     static bool debug = false;
 
 
-    public static void Main(string[] args)
-    {
-        DeleteMenu(GetSystemMenu(GetConsoleWindow(), false), SC_CLOSE, MF_BYCOMMAND);
-        ShowWindow(GetConsoleWindow(), SW_MINIMIZE);
+    //public static void Main(string[] args)
+    //{
+    //    DeleteMenu(GetSystemMenu(GetConsoleWindow(), false), SC_CLOSE, MF_BYCOMMAND);
+    //    ShowWindow(GetConsoleWindow(), SW_MINIMIZE);
 
-        if (args.Contains("debug"))
-        {
-            debug = true;
-            Console.BackgroundColor = ConsoleColor.Green;
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.WriteLine("NOT ARMED!");
-            Console.ResetColor();
-        }
+    //    if (args.Contains("debug"))
+    //    {
+    //        debug = true;
+    //        Console.BackgroundColor = ConsoleColor.Green;
+    //        Console.ForegroundColor = ConsoleColor.Black;
+    //        Console.WriteLine("NOT ARMED!");
+    //        Console.ResetColor();
+    //    }
 
-        Console.WriteLine("Ready!");
-        Init();
-        Console.ReadLine();
-    }
+    //    Console.WriteLine("Ready!");
+    //    Init();
+    //    Console.ReadLine();
+
+    //    MainWindow window = new MainWindow();
+        
+    //    window.Show();
+
+    //    //new Application().Run(new MainWindow());
+    //}
 
     public static void Init()
     {

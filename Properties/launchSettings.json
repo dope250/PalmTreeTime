@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "PalmTreeTime": {
+      "commandName": "Project",
+      "commandLineArgs": "debug"
+    }
+  }
+}
