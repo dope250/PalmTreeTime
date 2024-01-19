@@ -28,7 +28,7 @@ Any other keys should not be touched.
 
 ## ToDos
 * ~~Calculate time when computer is actually running and not first started~~
-* Simplify that point above. Just do an tick vs. timeContingent check holy fck.
+* ~~Simplify that point above. Just do an tick vs. timeContingent check holy fck.~~
 * ~~Special weekend time contingent (add to normal ones)~~
 * ~~Proper GUI and not a console window: Way to easy to manipulate the application behaviour~~
 * ~~Hide console window if everything checks. Show on time up; keep foreground till accepted to shutdown.~~

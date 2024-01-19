@@ -95,17 +95,15 @@ namespace PalmTreeTime
             {
                 WriteReg("LastTimeRun", currentTime.ToString());
                 lastTimeUsed = DateTime.Parse(ReadReg<string>("LastTimeRun"));
-                WriteReg("Tick", 0);
                 tick = 0;
+                WriteReg("Tick", tick);
             }
             else
             {
                 tick = ReadReg<int>("Tick");
-                maxTime -= tick;
-                if (currentTime >= lastTimeUsed.AddMinutes(maxTime))
+                if (tick >= maxTime)
                 {
                     Shutdown(true);
-                    return;
                 }
             }
 
@@ -164,9 +162,9 @@ namespace PalmTreeTime
         {
             WriteLogText(".", Colors.Black);
             tick += 1;
-            WriteReg("Tick", tick);
+            
 
-            if (DateTime.Now >= startedOn.AddMinutes(maxTime))
+            if (tick >= maxTime)
             {
                 Shutdown(true);
             }
