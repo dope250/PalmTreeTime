@@ -162,7 +162,7 @@ namespace PalmTreeTime
         {
             WriteLogText(".", Colors.Black);
             tick += 1;
-            
+            WriteReg("Tick", tick);
 
             if (tick >= maxTime)
             {
